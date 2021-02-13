@@ -1,0 +1,234 @@
+/* -- :: Main Contain :: -- */
+.main-contain {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  padding: 150px 0 70px;
+ 
+}
+/* Logo Contain */
+.main-contain .logo-contain img {
+  max-width: 260px;
+  margin-bottom: 30px;
+}
+/* Login Card */
+.login-card {
+  width: 460px;
+  box-shadow: 0 0.8px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 30px 60px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+.login-card .name {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: var(--typeColor)
+}
+/* Input Group */
+.login-card .input-group {
+  margin-bottom: 15px;
+}
+.login-card .input-group input {
+  padding: 11px 44px 11px 20px;
+  border-radius: 50px;
+  position: relative;
+}
+.login-card .input-group .password-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ced4da;
+  cursor: pointer;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+.login-card .input-group .password-btn:hover {
+  color: #495057;
+}
+/* Checkbox */
+.login-card .custom-checkbox label {
+  font-size: 16px;
+  font-weight: 400;
+}
+.custom-control-label::before {
+  background: #fff;
+  border: 1px solid #adb5bd;
+}
+/* Submit Button */
+.login-card .sub-btn {
+  padding: 11px 20px;
+  width: 100%;
+  color: #fff;
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 50px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  outline: none
+}
+.login-card .sub-btn:hover {
+  background: var(--thDarGreen);
+}
+.login-card .sub-btn:active {
+  background: #15CD72;
+}
+/* Forget Password */
+.login-card .forget-pass-link {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--thBlue);
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+.login-card .forget-pass-link:hover {
+  color: var(--thDarBlue);
+  text-decoration: underline !important;
+}
+/* Or */
+.or-wrapper {
+  margin-bottom: 15px;
+}
+.or-wrapper .or-div {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #9e9e9e;
+}
+.or-wrapper .or-div::before,
+.or-wrapper .or-div::after {
+  content: " ";
+  display: inline-block;
+  border-top: 1px solid #ccc;
+  width: 45%;
+  vertical-align: middle;
+  margin-top: 11px;
+}
+/* Social Login */
+.login-card .social-login a {
+  position: relative;
+  width: 100%;
+  padding: 11px 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--thBorderColor);
+  border-radius: 50px;
+  background-color: #fff;
+  color: #757575;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.login-card .social-login a:hover {
+  background: #eee;
+}
+.login-card .social-login a.face-login  {
+  background: #4267B2;
+  color: #fff;
+}
+.login-card .social-login a.face-login i {
+  font-size: 20px;
+}
+.login-card .social-login a.face-login:hover {
+  background: #263c68;
+}
+.login-card .social-login a.face-login:active  {
+  background: #4267B2;
+}
+/* Sign Up Link */
+.main-contain .sign-up-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.main-contain .sign-up-link:hover {
+  text-decoration: underline !important;
+}
+/* --------------------------------- */
+
+/* -- :: Media Query :: -- */
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .main-contain {
+    height: auto;
+    padding: 140px 0 40px;
+  }
+  .main-contain .logo-contain img {
+    max-width: 200px;
+  }
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .main-contain .logo-contain img {
+    margin-bottom: 24px;
+    max-width: 130px;
+  }
+  .login-card {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+  .login-card .name {
+    margin-bottom: 20px;
+  }
+  .login-card .input-group input {
+    padding: 8px 44px 8px 20px;
+    font-size: 14px;
+  }
+  .login-card .input-group input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .login-card .input-group input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .login-card .input-group input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .login-card .input-group input::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .login-card .input-group input::placeholder,
+  .login-card .custom-checkbox label,
+  .or-wrapper .or-div,
+  .main-contain .sign-up-link {
+    font-size: 14px;
+  }
+  .login-card .sub-btn,
+  .login-card .social-login a {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  .login-card .social-login a svg {
+    width: 17px;
+  }
+  .login-card .social-login a.face-login i {
+    font-size: 16px;
+  }
+}

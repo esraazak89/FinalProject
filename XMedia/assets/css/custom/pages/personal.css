@@ -1,0 +1,54 @@
+header {
+    width: 100%;
+    padding: 238px 0 180px;
+    position: relative;
+    overflow: hidden;
+    background: url(../../../images/pages/about-us/header/01-logo.png) center no-repeat;
+    background-size: contain;
+   
+  }
+  header h1 {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+  }
+  header .contain > p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #fff;
+    opacity: 0.8;
+    margin-bottom: 50px;
+  }
+  header ul {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    justify-content: space-around;
+    margin: 50px auto;
+  }
+  header ul li {
+    list-style: none;
+  }
+  header ul img {
+    width: 44px;
+    margin-bottom: 20px;
+  }
+  header ul p {
+    text-transform: capitalize;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 400;
+    opacity: 0.8;
+  }
+  b {
+    font-weight: 700 !important;
+  }
+  nav .top-bar {
+    background: rgb(255 255 255 / 97%) !important;
+    padding: 21px 6px 0 !important;
+  }
+  /* --------------------------------- */
+  
+  

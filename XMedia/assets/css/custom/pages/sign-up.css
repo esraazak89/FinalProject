@@ -1,0 +1,235 @@
+/* -- :: Main Contain :: -- */
+.main-contain {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  padding: 150px 0 70px;
+ 
+}
+/* Logo Contain */
+.main-contain .logo-contain img {
+  max-width: 260px;
+  margin-bottom: 30px;
+}
+/* Sign Up Card */
+.sign-up-card {
+  width: 460px;
+  box-shadow: 0 0.8px 16px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  padding: 30px 60px;
+  margin-bottom: 30px;
+  background: #fff;
+}
+.sign-up-card .name {
+  margin-bottom: 30px;
+  font-size: 24px;
+  color: var(--typeColor)
+}
+/* Input Group */
+.sign-up-card .input-group {
+  margin-bottom: 15px;
+}
+.sign-up-card .input-group input {
+  padding: 11px 44px 11px 20px;
+  border-radius: 50px;
+  position: relative;
+}
+.custom-file .custom-file-input{
+  border-radius: 50px;
+}
+.sign-up-card .input-group .password-btn {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #ced4da;
+  cursor: pointer;
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+.sign-up-card .input-group .password-btn:hover {
+  color: #495057;
+}
+/* Submit Button */
+.sign-up-card .sub-btn {
+  width: 100%;
+  padding: 11px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border: none; 
+  color: #fff;
+  -webkit-transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 10px;
+  outline: none
+}
+.sign-up-card .sub-btn:hover {
+  background: var(--thDarGreen);
+}
+.sign-up-card .sub-btn:active {
+  background: #15CD72;
+}
+/* Terms & Privacy */
+.sign-up-card .terms-privacy {
+  margin-bottom: 15px;
+}
+.sign-up-card .terms-privacy p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 22px;
+  color: #666;
+}
+.sign-up-card .terms-privacy a {
+  color: var(--thBlue);
+  -webkit-transition: color .2s ease-in-out;
+  transition: color .2s ease-in-out;
+}
+.sign-up-card .terms-privacy a:hover {
+  color: var(--thDarBlue);
+  text-decoration: underline !important;
+}
+/* Or */
+.or-wrapper {
+  margin-bottom: 15px;
+}
+.or-wrapper .or-div {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-around;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #9e9e9e;
+}
+.or-wrapper .or-div::before,
+.or-wrapper .or-div::after {
+  content: " ";
+  display: inline-block;
+  border-top: 1px solid #ccc;
+  width: 45%;
+  vertical-align: middle;
+  margin-top: 11px;
+}
+/* Social Sign Up */
+.sign-up-card .social-sign-up a {
+  position: relative;
+  width: 100%;
+  padding: 11px 20px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--thBorderColor);
+  border-radius: 50px;
+  background-color: #fff;
+  color: #757575;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.sign-up-card .social-sign-up a:hover {
+  background: #eee;
+}
+.sign-up-card .social-sign-up a.face-sign-up  {
+  background: #4267B2;
+  color: #fff;
+}
+.sign-up-card .social-sign-up a.face-sign-up i {
+  font-size: 20px;
+}
+.sign-up-card .social-sign-up a.face-sign-up:hover {
+  background: #263c68;
+}
+.sign-up-card .social-sign-up a.face-sign-up:active  {
+  background: #4267B2;
+}
+/* Sign Up Link */
+.main-contain .sign-up-link {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+.main-contain .sign-up-link:hover {
+  text-decoration: underline !important;
+}
+/* --------------------------------- */
+
+/* -- :: Media Query :: -- */
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+  .main-contain {
+    height: auto;
+    padding: 140px 0 40px;
+  }
+  .main-contain .logo-contain img {
+    max-width: 200px;
+  }
+}
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .main-contain .logo-contain img {
+    margin-bottom: 24px;
+    max-width: 130px;
+  }
+  .sign-up-card {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 30px;
+    margin-bottom: 20px;
+  }
+  .sign-up-card .name {
+    margin-bottom: 20px;
+  }
+  .sign-up-card .input-group input {
+    padding: 8px 44px 8px 20px;
+    font-size: 14px;
+  }
+  .sign-up-card .input-group input::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+  .sign-up-card .input-group input::-moz-placeholder {
+    font-size: 14px;
+  }
+  .sign-up-card .input-group input:-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .sign-up-card .input-group input::-ms-input-placeholder {
+    font-size: 14px;
+  }
+  .sign-up-card .input-group input::placeholder,
+  .or-wrapper .or-div,
+  .main-contain .sign-up-link {
+    font-size: 14px;
+  }
+  .sign-up-card .sub-btn,
+  .sign-up-card .social-sign-up a {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+  .sign-up-card .social-sign-up svg {
+    width: 17px;
+  }
+  .sign-up-card .social-sign-up a.face-sign-up i {
+    font-size: 16px;
+  }
+  .sign-up-card .terms-privacy {
+    margin-bottom: 0;
+  }
+  .sign-up-card .terms-privacy p {
+    font-weight: normal;
+  }
+}
