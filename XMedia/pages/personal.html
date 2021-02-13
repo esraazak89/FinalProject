@@ -163,48 +163,56 @@ function addPost(){
             <h2>Browse More than offer</h2>
             <p>Here you can find best offers for your photosessions.</p>
         </div>
-        <!-- Contain -->
-        <div class="container ml-9 m-5">
-            <div class="row">
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="../assets/images/pages/personal/Jane Birkin poster.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Book Now</a>
-            </div>
-          </div>
+    
+        
+          <div class="container ml-9 m-5">
+            <div id="cardData" class="row">
+    
     </div>
-    <div class="col">
-        <div class="card" style="width: 18rem;">
-            <img src="../assets/images/pages/personal/Model Photo Shoot with Cariad Celis.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-            <div class="card" style="width: 18rem;">
-                <img src="../assets/images/pages/personal/Jane Birkin poster.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-            </div>
+    
+       
+    <br /><br />
+            
+    
     
     </div>
         </div>
-    </div>
-  </div>
+
+
   <div class="col-md-12 text-center">
   <button  type="submit" class="sub-btn btn-fill-orange" onclick="addPost()">Add Post</button>
 </div><br />
 <br/>
+
+
+ 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <form class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Post</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <input class="th-input m-1 w-100" name="post_desc" id="post_desc" type="text" aria-label="Full Name" placeholder=" description" >
+        <input class="th-input m-1 w-100" name="price" id="price" type="text" aria-label="Full Name" placeholder=" Price" >
+        <div class="custom-file m-1" >
+          <input type="file" name="post_pic" class=" w-60 
+          custom-file-input" id="post_pic" accept="image/png, image/jpeg" required>
+          <label class="custom-file-label" for="post_pic">Choose Picture...</label>
+        </div>
+      </div>
+     
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-fill-orange">Add Post</button>
+      </form>
+    </div>
+  </div>
+</div>
 <!-- :: Footer -->
 <footer>
     <div class="container">
@@ -318,7 +326,7 @@ function addPost(){
                                 </a>
                             </li>
                         </ul>
-                    
+                       
                         
                     </div>
                 </div>
@@ -337,6 +345,87 @@ function addPost(){
 <script src="./../assets/js/lib/bootstrap.min.js"></script>
 <!-- Custom Script File -->
 <script src="./../assets/js/custom/javaScript.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  uploadFile = () => {
+      const data = new FormData();
+      data.append("file", $('#post_pic').val());
+      console.log($('#post_pic').val());
+   
+      axios.post("http://localhost:4000/UploadPic", data)
+        .then((res) => {
+          /* this.setState({
+            pic: "http://localhost:4000/uploads/" + res.data.data.name,
+          }); */
+          console.log("done");
+          //console.log(this.state);
+        })
+        .catch((err) => {
+         console.log(err)
+        });
+    };
+    function addPost(event) {
+        event.preventDefault();
+        let photo ={        
+          post_desc : $('#post_desc').val(),
+          post_pic : $('#post_pic').val(),
+          price :$('#price').val()
+          
+        }       
+          axios.post("http://localhost:4000/post", photo)
+          .then((res) => {
+            console.log(res.data);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+         
+        }
+      
+        const form = document.querySelector("form");
+        form.addEventListener("submit", addPost);
+      
+    
+      function getAllItem() {
+        let items = []
+        axios.get("http://localhost:4000/posts")
+          .then((res) => {
+            items = res.data
+            items.map(item => card(item.post_desc, item.price ,item.post_pic))
+          //	console.log(res);
+          })
+          .catch((err) => {
+            console.log(err);
+          })
+      }
+      function addItemDiv(post_desc, price,post_pic) {
+        document.getElementById('post_desc').innerHTML = post_desc;
+        document.getElementById('price').innerHTML = price;
+        document.getElementById('post_pic').src = post_pic;
+        console.log(post_pic);
+  
+      }
+      getAllItem();
+  
+      function card(post_desc,price, post_pic) {
+       // let bigDiv = $('<div col-lg-4 col-md-6></div>')
+        let div = $('<div class=" card m-3 col-lg-3 col-md-6"></div>');
+        let img = $(' <img src=".././assets/images/pages/personal/Jane Birkin poster.jpg" class=" m-2 card-img-top" />')
+        let h = $('<h5 class="card-title m-2">Photo shot</h5>')
+        let p = $('<p class="card-text m-2 /">'+post_desc +'</p>')
+        let cardText = $('<p class="card-text">' + price + '</p>')
+        
+        div.append(img)
+        div.append(h)
+        div.append(p)
+        div.append(cardText)
+        
+       // bigDiv.append(div)
+        $("#cardData").append(div)
+       // console.log(post_desc);
+        
+      }
+      </script>
 </body>
 
 </html>

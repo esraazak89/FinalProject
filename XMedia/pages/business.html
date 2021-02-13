@@ -153,12 +153,9 @@
         <h2>Browse More than offer</h2>
         <p>Here you can find best offers for your Business.</p>
     </div>
-    <div class="container ml-9 m-5">
-        <div class="row">
-<div  id="cardData" class="col">
+    <div class="container">
+        <div id="cardData" class="row">
 
-    
-      </div>
 </div>
 
    
@@ -278,7 +275,7 @@
                     </div>
                 </div>
             
-        
+       
             </div>
         </div>
         <!-- Copyright -->
@@ -318,8 +315,8 @@
                                 </a>
                             </li>
                         </ul>
-                    
-                        
+                       
+                       
                     </div>
                 </div>
             </div>
@@ -384,7 +381,7 @@ uploadFile = () => {
 			axios.get("http://localhost:4000/posts")
 				.then((res) => {
 					items = res.data
-					items.map(item => card(item.post_desc, item.price))
+					items.map(item => card(item.post_desc, item.price ,item.post_pic))
 				//	console.log(res);
 				})
 				.catch((err) => {
@@ -401,18 +398,21 @@ uploadFile = () => {
 		getAllItem();
 
     function card(post_desc,price, post_pic) {
-      let bigDiv = $('<div class="card m-20" style="width: 18rem;" ></div>')
-      let div = $('<div class="card-body m-2"></div>');
-      let img = $(' <img src=".././assets/images/pages/business/resized-image-Promo (1).jpeg" class="card-img-top">').attr('id', 'card_pic').attr('src', post_pic)
-      let h = $('<h5 class="card-title m-2">Conference Coverage</h5>')
-      let p = $('<p class="card-text m-2 /">'+post_desc +'</p>')
+     // let bigDiv = $('<div col-lg-4 col-md-6></div>')
+      let div = $('<div class="card col-lg-4 col-md-6 my-3 "></div>');
+      let img = $('<img src=".././assets/images/pages/business/e.jpeg" class="card-img-top pt-2 " />')
+      let h = $('<h5 class="card-title ">Conference Coverage</h5>')
+      let p = $('<p class="card-text ">'+post_desc +'</p>')
       let cardText = $('<p class="card-text">' + price + '</p>')
-      div.append(cardText)
       div.append(img)
       div.append(h)
+      div.append(cardText)
+      
       div.append(p)
-      bigDiv.append(div)
-      $("#cardData").append(bigDiv)
+      
+     
+     // bigDiv.append(div)
+      $("#cardData").append(div)
      // console.log(post_desc);
       
     }

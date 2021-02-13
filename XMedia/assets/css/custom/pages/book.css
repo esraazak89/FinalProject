@@ -236,4 +236,7 @@
   .login-card .social-login a.face-login i {
     font-size: 16px;
   }
+  .sub-btn {
+    border-radius: 20px;
+  }
 }
